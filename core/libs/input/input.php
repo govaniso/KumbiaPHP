@@ -171,6 +171,16 @@ class Input
         }
         return $_SERVER['REMOTE_ADDR'];
     }
+ 
+    /**
+    * Permite recuperar los datos en formato json
+    * @return json
+    */
+    public static function json()
+    {
+        $json =  file_get_contents('php://input');
+        return json_decode($json, true);
+    }
 
 
     /**
